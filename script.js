@@ -1,4 +1,23 @@
-console.log("hello world");
+/* make computer choice "done"
+make human choice "done"
+compare human and computer choice
+decide who won
+declare who won 
+repeat 5 times 
+display score every time
+
+*/
+
+
+
+
+
+
+
+
+
+
+
 
 // generate random computer choice
 function getComputerChoice() {
@@ -13,7 +32,7 @@ function getComputerChoice() {
         
     }
 }
-console.log(getComputerChoice());
+
 //make prompt to enter human choice 
 
 
@@ -31,4 +50,51 @@ function getHumanChoice() {
  }
     
 
-console.log(getHumanChoice());
+
+
+let humanScore = 0;
+let computerScore = 0; 
+
+function playRound(humanChoice,computerChoice) {
+    
+    if (humanChoice.toLowerCase()===computerChoice) {
+        console.log("it's a tie");
+    }else if(humanChoice.toLowerCase()==="rock" && computerChoice==="scissors"){
+        humanScore++;
+                 console.log("you win!")
+
+    }else if (humanChoice.toLowerCase()==="rock" && computerChoice==="paper"){
+        
+        computerScore++
+                console.log("you lose!")
+
+    
+    }else if (humanChoice.toLowerCase()==="paper" && computerChoice==="rock"){
+        
+        humanScore++;
+                console.log("you win!")
+
+
+   }else if (humanChoice.toLowerCase()==="paper" && computerChoice==="scissors"){
+         computerScore++;
+                  console.log("you lose!")
+
+
+   }else if (humanChoice.toLowerCase()==="scissors" && computerChoice==="paper"){
+        humanScore++;
+                console.log("you win!")
+
+
+   }else if (humanChoice.toLowerCase()==="scissors" && computerChoice==="rock"){
+        computerScore++;
+                console.log("you lose!")
+   
+   
+   }else {console.log("what was that??");}
+}
+
+    const humanChoice = getHumanChoice();
+    const computerChoice = getComputerChoice();
+
+playRound(humanChoice, computerChoice);
+
